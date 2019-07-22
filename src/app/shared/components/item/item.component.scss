@@ -1,0 +1,19 @@
+$font-size: 1rem;
+$line-height: 1.4;
+$lines-to-show: 2;
+
+.meta {
+  .meta-content {
+    display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    height: $font-size * $line-height * $lines-to-show;
+    margin: 0 auto;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

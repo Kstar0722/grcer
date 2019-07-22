@@ -1,0 +1,92 @@
+<div class="module">
+  <a class="module-logo" [routerLink]="['/']">
+    <img src="./assets/svg/logo.svg" alt="Grceri" />
+  </a>
+
+  <div class="module__content col col-lg-7">
+    <div class="module__content__header text-center">
+      <h2 class="module__content__header-title">Hello! Nice to see you back.</h2>
+      <h3 class="module__content__header-subtitle">Enter your information to login.</h3>
+    </div>
+    <form [formGroup]="login">
+      <div class="module__content__fields">
+        <ng-container *ngFor="let i of message">
+          <alert *ngIf="i" [type]="i.type" (onClosed)="_close(i)" [dismissOnTimeout]="8000" [dismissible]="true"> {{
+						i.value
+						}} </alert>
+        </ng-container>
+
+        <div class="module__content__fields__form-group form-group">
+          <input #email type="email" class="form-control" name="email" formControlName="email"
+            placeholder="email eddress" />
+        </div>
+        <div class="module__content__fields__form-group form-group">
+          <div class="module__content__fields__form-group-password">
+            <a class="module__content__fields__form-group-show" *ngIf="!show" (click)="password()">
+              <i class="fa fa-eye"></i> Show</a>
+            <a class="module__content__fields__form-group-show" *ngIf="show" (click)="password()">
+              <i class="fa fa-eye-slash"></i> Hide</a>
+          </div>
+          <input #pass [type]="show ? 'text' : 'password'"
+            class="form-control module__content__fields__form-group-padding-right" name="password"
+            formControlName="password" placeholder="password" />
+        </div>
+      </div>
+      <div class="row module__content-buttons">
+        <div class="col col-md-6">
+          <label class="module__content__rememberme">
+            <div class="module__content__rememberme-label">
+              <input type='checkbox' id='rememberme' formControlName='rememberme' />
+              <label for="rememberme"></label>
+            </div>
+            Keep me logged in
+          </label>
+        </div>
+        <a class="module__content-forgot col col-md-6" [routerLink]="['/forgot-password']">Forgot Password?</a>
+      </div>
+      <button type="submit" [disabled]="!login.valid" class="btn btn-primary"
+        (click)="click(login.controls.email.value, login.controls.password.value, login.controls.rememberme.value);">
+        <span [class.hidden]="submit == true">Log In</span>
+        <span [class.hidden]="submit != true" class="spinner">
+          <img src="/assets/svg/three-dots.svg" width="35" alt="" />
+        </span>
+      </button>
+		</form>
+		<div class="module__content__social text-center">
+			<h4>Login using one of your existing social accounts:</h4>
+
+			<div class="row">
+				<div class="col col-lg-4">
+					<span class="module__content__social-btn">
+						<i class="fa fa-facebook"></i>
+					</span>
+				</div>
+				<div class="col col-lg-4">
+					<span class="module__content__social-btn">
+							<i class="fa fa-twitter"></i>
+					</span>
+				</div>
+				<div class="col col-lg-4">
+					<span class="module__content__social-btn">
+							<i class="fa fa-google"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+
+    <p class="module__content-desc text-center">Don't have a Grceri account?
+      <a [routerLink]="['/pricing']">Sign Up</a>
+    </p>
+  </div>
+</div>
+<div class="billboard">
+  <slider showC="true" multiple="true" count="1">
+    <ng-container *ngFor="let i of items;">
+      <ng-container *item>
+        <img class="billboard__slider-img" [src]="i.image" />
+        <h2 class="billboard__slider-title">{{ i.title }}</h2>
+        <p class="billboard__slider-desc">{{ i.desc }}</p>
+      </ng-container>
+    </ng-container>
+  </slider>
+</div>

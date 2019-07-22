@@ -1,0 +1,63 @@
+category,
+search {
+	.content {
+		.filters {
+      @include font-size(14px);
+      padding: 0 0 10px 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #f3f3f3;
+
+      .count {
+        padding-left: 20px;
+      }
+
+      .filter {
+        text-align: right;
+
+        .sort {
+
+          select {
+            @include border-radius(3px);
+            display: inline-flex;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            padding: 2px;
+          }
+
+          span {
+            font-weight: 500;
+            border-right: 1px solid #f3f3f3;
+            margin-right: 10px;
+            padding-right: 5px;
+            vertical-align: middle;
+          }
+        }
+
+        .view {
+          width: 70px;
+
+          .filter-group {
+
+            img {
+              @include opacity(.5);
+              display: inline-block;
+              margin-left: 15px;
+              width: 17px;
+              vertical-align: middle;
+              cursor: pointer;
+
+              &.active,
+              &:hover {
+                @include opacity(1);
+              }
+
+              &.active {
+                cursor: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+	}
+}

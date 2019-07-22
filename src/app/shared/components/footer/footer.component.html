@@ -1,0 +1,56 @@
+<footer 
+  *ngIf="!router.url.startsWith('/user') && router.url != '/watchlists'"
+  class="reg">
+  <div class="container">
+    <!-- <div class="row section-footer">
+      <div class="col col-md-6">
+        <div class="row">
+          <div class="col col-md-3">
+            <a href="mailto:support@grceri.com">support@grceri.com</a>
+          </div>
+          <div class="col col-md-3">
+              <a routerLink="/faq">FAQ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-6">
+        <a href="javascript:void(0);" id="showWidget" onclick="zE(function() {zE.activate({hideOnClose: true});});">Need Help? Let's Chat</a>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col col-md-4">
+        <img class="reg-logo" src="/assets/svg/cart.svg" alt="Grceri - Logo" />
+        <h5 class="reg-title">Online Grocery Database</h5>
+        <p class="reg-desc">Grceri is the best solution for searching your favorite food products online.</p>
+        <!-- <div class="reg__social">
+          <a src="http://facebook.com/grceri" target="_blank" class="reg__social-link">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a src="http://pinterest.com/grceri" target="_blank" class="reg__social-link">
+            <i class="fa fa-pinterest"></i>
+          </a>
+          <a src="http://twitter.com/grceri" target="_blank" class="reg__social-link">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a src="http://instagram.com/grceri" target="_blank" class="reg__social-link">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </div> -->
+        <ul class="reg__links">
+          <li class="reg__links-link reg__links-link-copyright">© Grceri</li>
+          <li class="reg__links-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a
+              (click)="GS.event('link', 'Footer - Privacy & Terms', 'click', 0)"
+              routerLink="/policies">Privacy & Terms</a>
+          </li>
+          <li class="reg__links-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a
+              (click)="GS.event('link', 'Footer - Pricing', 'click', 0)" 
+              routerLink="/pricing">Pricing</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <footer-nav class="col col-md-3 col-md-offset-5 reg__nav"></footer-nav> -->
+    </div>
+  </div>
+</footer>

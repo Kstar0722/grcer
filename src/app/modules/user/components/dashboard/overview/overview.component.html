@@ -1,0 +1,28 @@
+<div class="dashboard__content__box">
+  <div class="dashboard__content__box__header">
+    <div class="dashboard__content__box__header-left">
+      <h4 class="dashboard__content__box__header-title">
+        Nutrition Overview
+      </h4>
+      <p class="dashboard__content__box__header-subtitle">
+        Categorized totals based on selected list
+      </p>
+    </div>
+    <div class="dashboard__content__box__header-right">
+      <div class="dashboard__content__box__header-dropdown">
+        <div class="dropdown-sort" dropdown>
+          <a dropdownToggle data-toggle="dropdown" aria-haspopup="true" aria- expanded="true">Sort by List <i
+              class="fa fa-angle-down"></i></a>
+          <ul *dropdownMenu role="menu" aria-labelledby="menu2">
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas baseChart [colors]="style" [datasets]="data" [labels]="labels" [options]="options" legend="true"
+    chartType="bar">
+  </canvas>
+</div>

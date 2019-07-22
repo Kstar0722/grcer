@@ -1,0 +1,51 @@
+<section class="settings">
+  <div class="container">
+    <h1>Settings</h1>
+
+    <div class="row">
+      <div class="col col-md-2">
+        <div class="settings__links">
+          <div class="settings__links__section">
+            <h2 class="settings__links__section-title">Account</h2>
+            <a [routerLink]="['/user/settings/account/profile']" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}">
+              Profile
+            </a>
+            <a [routerLink]="['/user/settings/account/security']" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}">
+              Security
+            </a>
+            <!-- <a [routerLink]="['/user/settings/account/notifications']" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}">
+              Notifications
+            </a> -->
+            <a [routerLink]="['/user/settings/account/management']" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}">
+              Management
+            </a>
+          </div>
+          <div class="settings__links__section">
+            <h2 class="settings__links__section-title">Billing</h2>
+            <a [routerLink]="['/user/settings/billing/subscription']" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}">
+              Subscription
+            </a>
+            <a [routerLink]="['/user/settings/billing/payment']" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}">
+              Payment
+            </a>
+            <a [routerLink]="['/user/settings/billing/history']" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}">
+              History
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-7">
+        <div class="settings__content">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

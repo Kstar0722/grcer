@@ -1,0 +1,22 @@
+lists-single {
+  .list {
+    &__header {
+      margin-bottom: 40px;
+
+      &-title {
+        margin: 0px;
+      }
+
+      &__buttons {
+        text-align: right;
+
+        button {
+          margin-left: 20px;
+          background: #eee;
+          border: 1px solid #fafafa;;
+          padding: 4px 15px;
+        }
+      }
+    }
+  }
+}

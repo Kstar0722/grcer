@@ -1,0 +1,37 @@
+<section class="lists">
+  <div class="container">
+    <div class="lists__header">
+      <h1 class="lists__header-title">Lists</h1>
+      <div class="lists__header__buttons">
+        <div class="lists__header__buttons-dropdown">
+          <div class="dropdown-sort" dropdown>
+            <a dropdownToggle data-toggle="dropdown" aria-haspopup="true" aria- expanded="true">Sort by Type <i
+                class="fa fa-angle-down"></i></a>
+            <ul *dropdownMenu role="menu" aria-labelledby="menu2">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lists__header__buttons-dropdown">
+          <div class="dropdown-sort" dropdown>
+            <a dropdownToggle data-toggle="dropdown" aria-haspopup="true" aria- expanded="true">Sort by Category <i
+                class="fa fa-angle-down"></i></a>
+            <ul *dropdownMenu role="menu" aria-labelledby="menu2">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button class="lists__header__buttons-btn btn btn-primary small" (click)="COpened === true">Create List</button>
+      </div>
+    </div>
+    <div class="row">
+      <lists-tile></lists-tile>
+    </div>
+  </div>
+</section>
+
+<!-- <lists-create *ngIf="COpened" (open)="filter($event)"></lists-create> -->

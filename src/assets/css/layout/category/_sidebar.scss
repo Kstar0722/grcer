@@ -1,0 +1,231 @@
+category,
+search {
+  .sidebar {
+    padding: 20px 0 0 0;
+
+    section {
+      margin: 0 0 20px;
+      padding-right: 20px;
+
+      h4 {
+        @include font-size(15px);
+        font-family: 'AM', sans-serif;
+        user-select: none;
+        letter-spacing: 1px;
+        cursor: pointer;
+        margin: 0 0 20px 0;
+        text-transform: uppercase;
+
+        i {
+          float: right;
+          color: #333;
+        }
+      }
+
+      ol {
+        li {
+          margin-bottom: 10px;
+
+          a {
+            @include font-size(15px);
+            color: #333;
+
+            &:hover {
+              color: $green;
+            }
+          }
+
+          input[type="checkbox"] {
+            @include opacity(0);
+            position: absolute;
+            pointer-events: none;
+
+            & + label:after {
+              content: none;
+            }
+
+            &:checked {
+              & + label {
+                &:after {
+                  content: "";
+                }
+                &:before {
+                  border-color: $green;
+                  background: $green;
+                }
+              }
+            }
+            &:not(:checked) {
+              & + label {
+                &.disabled {
+                  &:before {
+                    @include opacity(.4);
+                  }
+                }
+              }
+            }
+          }
+
+          label {
+            @include font-size(14px);
+            font-weight: normal;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            padding: 0 0 0 24px;
+            color: #1d252c;
+
+            &.disabled {
+              cursor: default;
+            }
+
+            &:before,
+            &:after {
+              position: absolute;
+              content: "";
+              display: inline-block;
+            }
+
+            &:before {
+              @include border-radius(2px);
+              height: 15px;
+              width: 15px;
+              border: 1px solid #9d9fa2;
+              left: 0px;
+              top: 2px;
+            }
+
+            &:after {
+              @include rotate(45);
+              top: 0;
+              left: 6px;
+              width: 7px;
+              height: 12px;
+              border-top: 1px solid transparent;
+              border-left: 1px solid transparent;
+              border-right: 1px solid $white;
+              border-bottom: 1px solid $white;
+            }
+
+            &:not(.disabled):hover {
+              &:before {
+                border-color: #333;
+              }
+            }
+
+            // RATING
+            .br-units {
+              display: inline-flex;
+            }
+
+            .br-text {
+              display: inline-flex;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .list {
+          &-more {
+            display: block;
+            margin-top: 16px;
+
+            span {
+              @include font-size(15px);
+              text-decoration: underline;
+            }
+
+            i {
+              @include font-size(14px);
+              margin-top: 3px;
+              float: right;
+            }
+          }
+        }
+      }
+
+      .applied__filters {
+        &-title {
+          cursor: default;
+
+          span {
+            text-transform: capitalize;
+            text-decoration: underline;
+            float: right;
+            letter-spacing: 0px;
+            cursor: pointer;
+          }
+        }
+
+        &-filter {
+          @include font-size(14px);
+          background: #f0f0f0;
+          display: inline-block;
+          color: $green;
+          vertical-align: middle;
+          padding: 2px 4px;
+          max-width: 100%;
+          height: 20px;
+          margin: 2px 5px 2px 0;
+
+          line-height: 16px;
+          cursor: pointer;
+
+          img {
+            margin-left: 7px;
+          }
+
+          &:hover {
+            background: #eee;
+            color: #333;
+          }
+        }
+      }
+
+      .rating {
+        .fa-star {
+          color: #333;
+        }
+
+        .fa-star-o {
+          color: lightgray;
+        }
+      }
+
+      .slider {
+
+        &-cancel,
+        &-apply {
+          @include font-size(14px);
+          background: transparent;
+          border: none;
+          margin-top: 5px;
+          padding: 0px;
+          color: #333;
+
+          &.disabled {
+             &:hover {
+               text-decoration: none;
+               color: #333;
+             }
+          }
+
+          &:hover {
+            text-decoration: underline;
+            color: $green;
+          }
+        }
+
+        &-apply {
+          float: right;
+        }
+
+      }
+
+      &:not(:first-child) {
+        border-top: 1px solid #f3f3f3;
+        padding-top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<!-- <kendo-dialog class="product__cart-dialog" [width]="800"> -->
+    <div class="product__cart-dialog__cart col col-md-9">
+      <div class="product__cart-dialog__cart-item">
+        <h2 *ngIf="product" class="product__cart-dialog__cart-item-title"><img src="./assets/svg/check.svg" /> You just added {{
+          product.quantity }} <span *ngIf="product.quantity == 1">item</span> <span *ngIf="product.quantity !== 1">items</span>
+          (<a routerLink="/cart">{{cartQty}} total</a>)</h2>
+          <div class="product__cart-dialog__cart-item__detail-wrapper">
+            <div *ngFor="let sp of product" class="product__cart-dialog__cart-item__detail row">
+              <div class="col col-md-3">
+                <img class="product__cart-dialog__cart-item__detail-img col" [src]="sp.images[0].thumbnail" [alt]="sp.title" />
+              </div>
+              <div class="col col-md-7">
+                <h4 class="product__cart-dialog__cart-item__detail-title">{{sp.title}}</h4>
+                <!-- <p class="product__cart-dialog__cart-item__detail-desc">
+                  {{product.description}}
+                </p> -->
+              </div>
+              <!-- <div class="col col-md-2"> -->
+                <!-- <div class="product__cart-dialog__cart-item__detail-qty">Qty {{product.quantity}}</div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+      </div>
+      <!-- <div class="product__cart-dialog__cart-trending">
+        <h3 class="product__cart-dialog__cart-trending-title">Trending on Grceri.com</h3>
+        <slider showC="true" multiple="true" count="4">
+          <ng-container *ngFor="let i of items;">
+            <ng-container *sliderItem>
+              <item
+
+                [cat]="i.Category"
+                [upc]="i.UPC"
+                [rating]="i.Rating"
+                [ratingC]="i.Rating_count"
+                [name]="i.Title"
+                [images]="i.images"
+                [Hprice]="i.Highest_recorded_price"
+                [Lprice]="i.Lowest_recorded_price">
+              </item>
+            </ng-container>
+          </ng-container>
+        </slider>
+      </div> -->
+    </div>
+    <div class="col col-md-3 product__cart-dialog__sidebar">
+      <a (click)="dialog('close')" class="product__cart-dialog__sidebar-close"><img src="./assets/svg/close.svg" /></a>
+      <div class="product__cart-dialog__sidebar__total">
+        <div class="product__cart-dialog__sidebar__total-item">
+          <span class="product__cart-dialog__sidebar__total-item-title">Total <small>({{cartQty}} items)</small></span>
+          <span class="product__cart-dialog__sidebar__total-item-amount">${{getTotalAmount()}}</span>
+        </div>
+        <div class="product__cart-dialog__sidebar__total-item">
+          <span class="product__cart-dialog__sidebar__total-item-title">Savings</span>
+          <span class="product__cart-dialog__sidebar__total-item-amount">${{getTotalSavings()}}</span>
+        </div>
+      </div>
+      <button (click)="dialog('close')" class="btn product__cart-dialog__sidebar-btn-light" routerLink="/cart">View List</button>
+      <button class="btn btn-primary product__cart-dialog__sidebar-btn" (click)="createShoppingList()">Create</button>
+      <a (click)="dialog('close')" class="product__cart-dialog__sidebar-continue">Continue Shopping</a>
+    </div>
+  <!-- </kendo-dialog> -->

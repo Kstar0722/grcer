@@ -1,0 +1,127 @@
+category,
+search {
+  min-height: 500px;
+
+  .cat {
+    padding: 15px 0;
+    background: #fafafa;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+  }
+
+  .content {
+    min-height: 1800px;
+    border-left: 1px solid #f3f3f3;
+    padding: 10px 0 0 0;
+
+    .search-results {
+      display: flex;
+
+      &__items {
+        min-height: 500px;
+        width: 100%;
+        padding-left: 20px;
+
+        &-item {
+          display: inline-flex;
+          margin-bottom: 20px;
+          width: 20%;
+          border-bottom: 1px solid #f3f3f3;
+          padding: 16px 4px;
+
+          item {
+            width: 100%;
+            a {
+              color: #333;
+
+              .image {
+                margin: 0 0 15px 0;
+                text-align: center;
+
+                &-container {
+                  padding-bottom: 100%;
+                  height: 0px;
+                  width: 100%;
+                  position: relative;
+                  
+                  img {
+                    @include transform(translate(-50%, -50%));
+                    position: absolute;
+                    max-width: 200px;
+                    max-height: 200px;
+                    top: 50%;
+                    left: 50%;
+                    margin-right: -50%;
+                  }
+                }
+              }
+
+              h4 {
+                @include font-size(16px);
+                margin: 0 0 10px 0;
+                height: 40px;
+              }
+
+              .rating {
+                span {
+                  @include font-size(12px);
+                  margin-left: 6px;
+                  position: relative;
+                  top: -1px;
+                }
+              }
+
+              &:visited {
+                color: #333;
+              }
+            }
+
+            .price {
+              @include font-size(16px);
+              color: $black;
+              display: block;
+              font-family: 'AB', serif;
+              font-weight: 700;
+              padding-top: 10px;
+            }
+            
+            &:nth-last-child(-n + 5) {
+              border: none;
+            }
+          }
+        }
+      }
+
+      &__none {
+        min-height: 1000px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        &-item {
+          text-align: center;
+
+          img {
+            height: 50px;
+          }
+
+          h4 {
+            margin: 40px 0 5px;
+          }
+
+          span {
+            font-family: 'AL', serif;
+            color: #777;
+          }
+        }
+      }
+    }
+
+    .advertisement {
+      margin: 32px 0;
+      padding: 0 25px;
+    }
+  }
+
+}

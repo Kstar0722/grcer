@@ -1,0 +1,23 @@
+watchlist {
+  min-height: 70vh;
+  display: block;
+
+  .watchlist {
+    margin-top: 50px;
+
+    &__header {
+      margin-bottom: 40px;
+
+      &-title {
+        margin: 0px;
+      }
+
+      p {
+        @include font-size(16px);
+        font-family: 'AL', sans-serif;
+        line-height: 24px;
+        color: #a1a1a1;
+      }
+    }
+  }
+}

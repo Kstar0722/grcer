@@ -1,0 +1,17 @@
+<a 
+  (click)="GS.event('image', 'Header - Groceries', 'click', 0)"
+  class="btn btn-primary small" 
+  [routerLink]="['/groceries']" 
+  *ngIf="!totalQuantity()">
+  Shop
+</a>
+
+<a 
+  *ngIf="totalQuantity()" 
+  (click)="GS.event('image', 'Header - Shopping List', 'click', 0)"
+  class="cart-icon" 
+  [routerLink]="['/cart']">
+  <i class="fa fa-shopping-cart"></i>
+  <span class="items">{{totalQuantity()}}</span>
+</a>
+

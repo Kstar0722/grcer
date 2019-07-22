@@ -1,0 +1,96 @@
+.lists {
+  min-height: 70vh;
+
+  &__header {
+    margin-bottom: 40px;
+
+    &-title {
+      display: inline-block;
+      margin: 0px;
+    }
+
+    &__buttons {
+      float: right;
+
+      &-dropdown {
+        min-width: 100px;
+      }
+
+      >* {
+       float: left;
+        margin-left: 20px;
+      }
+
+      &-btn {
+        font-family: 'AM', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        width: 120px;
+      }
+    }
+
+  }
+
+  &__card {
+    @include box-shadow(0 0 3px 0 rgba(57, 73, 76, 0.1));
+    border: 1px solid #e7e7ea;
+
+    &__body {
+      padding: 20px;
+
+      &__header {
+        margin-bottom: 20px;
+
+        &-title {
+          @include font-size(22px);
+          color: #333;
+          margin: 0px;
+          display: inline-block;
+        }
+
+        &-dropdown {
+          float: right;
+          position: relative;
+
+          i {
+            @include font-size(20px);
+            color: #333;
+          }
+        }
+      }
+
+      &__content {
+        background: #fafafa;
+        padding: 20px;
+
+        &__row {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+
+          &__column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
+
+            &-amount {
+              @include font-size(20px);
+              margin-bottom: 5px;
+            }
+            &-title {
+              @include font-size(15px);
+              color:#666;
+              letter-spacing: .5px;
+            }
+          }
+
+          &:last-of-type {
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+}

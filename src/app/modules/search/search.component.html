@@ -1,0 +1,117 @@
+<div class="cat">
+  <div class="container">
+    <p>Search results for: {{queryText}}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar col col-md-2">
+    <sidebar
+      #searchpagesidebar
+      [ssections]="sections"
+      [sidebarcache]="sidebarData"
+      (activeFilters)="getSidebarData($event)">
+    </sidebar>
+  </div>
+  <div class="content col col-md-10">
+    <ng-container *ngIf="!noProductFound">
+      <div class="filters arrange" *ngIf="items?.length > 0; else headerBarSkeleton">
+        <div class="arrange_unit middle count">
+          <ng-container *ngIf="total > 50; else less">
+            Showing {{page == 1 ? page : ((count * (page - 1)) + 1)}} - {{page == 1 ? count : (count * page)}} of
+            {{total}} results
+          </ng-container>
+          <ng-template #less>
+            Showing 1 - {{total}} of {{total}} results
+          </ng-template>
+        </div>
+        <div class="arrange_unit filter">
+          <sort
+            [sortBy]="sortBy"
+            (sortData)="sortDataChange($event)">
+          </sort>
+        </div>
+      </div>
+      <ng-template #headerBarSkeleton>
+        <div class="row">
+          <div class="col col-md-6">
+            <div class="col col-md-4">
+              <div class="skeleton-bar"></div>
+            </div>
+          </div>
+          <div class="col col-md-6">
+            <div class="row">
+              <div class="col col-md-5 col-md-offset-7">
+                <div class="skeleton-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+
+    <div class="row">
+      <div class="col col-md-12">
+        <div class="search-results">
+          <div class="search-results__items" *ngIf="!noProductFound">
+            <ng-container *ngIf="items?.length > 0; else mainContentSkeleton">
+              <ng-container
+                *ngFor="let i of items | paginate: { itemsPerPage: count, currentPage: page, totalItems: total }">
+                <div class="search-results__items-item">
+                  <item
+                    [productID]="i.Product_id"
+                    [cat]="i.Category"
+                    [upc]="i.UPC"
+                    [rating]="i.Rating"
+                    [ratingC]="i.Rating_count"
+                    [name]="i.Title"
+                    [images]="i.Product_thumbnail_url"
+                    [Hprice]="i.Highest_recorded_price"
+                    [Lprice]="i.Lowest_recorded_price">
+                  </item>
+                </div>
+              </ng-container>
+            </ng-container>
+            <ng-template #mainContentSkeleton>
+              <ng-container *ngFor="let i of nitems">
+                <div class="skeleton-box">
+                  <div class="skeleton-square"></div>
+                  <div class="skeleton-bar skeleton-margin-bottom"></div>
+                  <div class="row">
+                    <div class="col col-md-5">
+                      <div class="skeleton-bar skeleton-margin-bottom"></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col-md-7">
+                      <div class="skeleton-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </ng-template>
+          </div>
+          <div class="search-results__none" *ngIf="noProductFound">
+            <div class="search-results__none-item">
+                <img src="../../../../../assets/svg/cart.svg" alt="No Results" />
+                <h4>No products found</h4>
+                <span>Sorry, that filter combination has no results. Please try different criteria.</span>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngIf="items?.length > 0 && !noProductFound">
+          <pagination-controls
+            (pageChange)="setPagination($event)">
+          </pagination-controls>
+          <div class="horizontal-advertisement">
+            <ng-adsense
+              [adClient]="'ca-pub-3783664105032363'"
+              [adFormat]="'auto'"
+              [adSlot]="3858062809">
+            </ng-adsense>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

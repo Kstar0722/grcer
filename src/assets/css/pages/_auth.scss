@@ -1,0 +1,593 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+//  BEM - Block Element Modifier
+//  This is how our code is structured. Please follow this layout and format.
+//  More Info: https://css-tricks.com/bem-101/
+//
+//  .steps {
+//	    &__item {		
+//		    &--first {}
+//		    &--last {}
+//		    &--active {}
+//		    &--done {}
+//	    }
+//	    &__link {}
+//  }
+
+
+login,
+forgot-password {
+  display: flex;
+  z-index: 1;
+  background: $white;
+
+  .module {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-logo {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+
+      img {
+        width: 100px;
+      }
+    }
+    &__content {
+      margin: 0px auto;
+      padding: 0 10px;
+
+      form {
+        .btn {
+          @include border-radius(30px);
+          font-family: 'AM', sans-serif;
+          font-weight: 400;
+        }
+      }
+
+      &__social {
+        margin-bottom: 25px;
+
+        h4 {
+          @include font-size(16px);
+          margin-bottom: 30px;
+          margin-top: 15px;
+        }
+
+        &-btn {
+          padding: 15px 40px;
+          display: inline-block;
+
+          i {
+            @include border-radius(50%);
+            @include font-size(12px);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            border: 2px solid #f6f6f6;
+            color:#48B56A;
+          }
+        }
+      }
+
+      &__header {
+        margin-bottom: 25px;
+
+        &-title {
+          @include font-size(22px);
+          line-height: 1.36;
+          margin: 0 0 .5rem;
+        }
+
+        &-subtitle {
+          @include font-size(16px);
+          line-height: 24px;
+          color: rgba(99,114,130,0.9);
+          margin: 0 0 .5rem;
+        }
+      }
+
+      &-btn {
+        margin-top: 18px;
+      }
+
+      &-username {
+        text-align: right;
+        margin-top: 10px;
+      }
+
+      &__rememberme {
+        @include font-size(16px);
+        font-family: 'AM', serif;
+        font-weight: 400;
+        position: relative;
+
+        &-label {
+          display: inline-block;
+          padding: 0px;
+          margin-right: 8px;
+          position: relative;
+          top: 7px;
+        }
+
+        input[type=checkbox] {
+          display: none;
+        }
+
+        input[type=checkbox]+label {
+          height: 24px;
+          width: 24px;
+          @include border-radius(3px);
+          border: 2px solid #ccc;
+          cursor: pointer;
+
+          &:hover {
+            border-color: #777;
+          }
+        }
+
+        input[type=checkbox]:checked {
+
+          +label {
+            background: rgb(108, 219, 143) url('/assets/svg/check.svg');
+            background-size: 13px 13px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            border-color: $green;
+            height: 24px;
+            width: 24px;
+
+            &:hover {
+              border-color: rgb(49, 190, 94);
+              background-color: rgb(73, 173, 105);
+            }
+          }
+        }
+      }
+
+      &__fields {
+
+        &__form-group {
+          position: relative;
+          margin-bottom: 25px;
+
+          label {
+            letter-spacing: .5px;
+            font-family: 'AM', serif;
+            font-weight: 400;
+          }
+
+          button {
+            font-family: 'AM', serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+          }
+
+          
+          &-password {
+            position: absolute;
+            right: 15px;
+            top: 17px;
+          }
+
+          &-padding-right {
+            padding-right: 85px !important;
+          }
+
+          &-show {
+            cursor: pointer;
+            border: none;
+            color: #333;
+
+            i {
+              @include font-size(18px);
+              margin-right: 5px;
+            }
+          }
+
+          input {
+            @include font-size(17px);
+            min-height: 52px;
+            line-height: 20px;
+            padding: 0 15px;
+
+            &.ng-invalid.ng-touched {
+              border-color: $red;
+            }
+
+            &.ng-valid.ng-touched {
+              border-color: $green;
+            }
+          }
+
+        }
+      }
+
+      &-forgot {
+        line-height: normal;
+        margin: 8px 0px;
+        float: right;
+        width: fit-content;
+      }
+
+      &-desc {
+        margin-top: 40px;
+        color: rgba(99,114,130,0.9);
+      }
+
+      &-buttons {
+        margin-bottom: 30px;
+        margin-top: -7px;
+      }
+    }
+  }
+
+  .billboard {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f6f6f6;
+    height: 100vh;
+
+    &__slider {
+      text-align: center;
+      width: 100%;
+      padding: 30px;
+      max-width: 500px !important;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+
+      &-title,
+      &-desc {
+        color: white;
+      }
+
+      &-title {
+        @include font-size(22px);
+        margin: 0 0 20px;
+      }
+
+
+    }
+  }
+}
+
+forgot-password {
+  .text-center {
+    a {
+      margin-top: 20px;
+      display: block;
+    }
+  }
+}
+
+login {
+  form {
+    padding: 20px;
+    margin: 20px 0;
+  }
+}
+
+register {
+  display: flex;
+  z-index: 1;
+  background: $white;
+
+  .register {
+    position: relative;
+
+    &-stripe {
+      position: absolute;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      transform: skewY(-12deg);
+      background: #f6f6f6;
+    }
+
+    &__content {
+
+      &__header {
+        margin: 40px 0 0;
+        display: flex;
+        justify-content: space-between;
+
+        &-logo {
+          float: left;
+          width: 100px;
+        }
+
+        &-link {
+          float: right;
+          letter-spacing: 1px;
+        }
+      }
+
+      &__form {
+        padding: 7% 10% 2% 10%;
+
+        &-padding {
+          padding: 0 10% 0 0;
+        }
+        &-title {
+          @include font-size(35px);
+          font-family: 'B', sans-serif;
+          letter-spacing: 1px;
+          font-weight: 500;
+          margin: 0 0 20px 0;
+        }
+  
+        p {
+          @include font-size(17px);
+          font-family: 'AL', serif;
+          color: #666;
+          line-height: 25px;
+          margin-bottom: 30px;
+  
+          a {
+            text-decoration: underline;
+          }
+        }
+
+        section {
+          margin-bottom: 40px;
+
+          h3 {
+            margin: 0 0 20px;
+          }
+        }
+
+        
+        .form-group {
+          position: relative;
+          display: table;
+          width: 100%;
+
+          label {
+            @include font-size(16px);
+            font-family: 'AM', serif;
+            font-weight: 400;
+          }
+
+          .form-control {
+            @include font-size(17px);
+            min-height: 52px;
+            line-height: 20px;
+            padding: 0 15px;
+            margin: 0px;
+            max-width: inherit;
+
+            &.ng-invalid.ng-touched {
+              border-color: $red;
+            }
+
+            &.ng-valid.ng-touched {
+              border-color: $green;
+            }
+          }
+
+          .show {
+            cursor: pointer;
+            border: none;
+
+            i {
+              @include font-size(18px);
+              margin-right: 5px;
+            }
+          }
+        }
+
+        &__password-requirements {
+          margin: 0 0 40px 0;
+
+          &-meta {
+            @include opacity(1);
+            @include font-size(14px);
+            max-height: 200px;
+
+            li {
+              line-height: 24px;
+
+              &.error {
+                @include opacity(0);
+              }
+
+              &.active {
+                @include opacity(.5);
+
+                &:before {
+                  background: $green;
+                }
+
+                &.error {
+                  @include opacity(1);
+
+                  &:before {
+                    background: red;
+                  }
+                }
+              }
+
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                margin-right: 10px;
+                border-radius: 8px;
+                background: #eee;
+              }
+            }
+          }
+        }
+      }
+
+      &__subscription {
+        @include border-radius(3px);
+        @include box-shadow(0 0 0 1px #e0e0e0);
+        background: #fff;
+        margin: 20px 0 0 10%;
+        padding: 20px;
+        border: 1px solid #ddd;
+
+        h2 {
+          font-family: 'B', sans-serif;
+          margin: 0 0 20px;
+        }
+
+        &__details {
+          margin-top: 10px;
+
+          &-blurb {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 10px;
+
+            p {
+              @include font-size(15px);
+              padding-right: 2%;
+              line-height: 20px;
+              display: inline-block;
+              margin: 0px;
+            }
+  
+            i {
+              @include font-size(15px);
+              padding-left: 2%;
+              cursor: pointer;
+              float: right;
+            }
+          }
+
+          &-accordion {
+            margin-left: 10px;
+
+            h4 {
+              font-family: 'AL', sans-serif;
+              strong {
+                color: #333;
+                font-family: 'AB', sans-serif;
+                display: block;
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          &-small {
+            @include font-size(14px);
+            font-family: 'AM', sans-serif;
+            font-weight: 500;
+            position: relative;
+            margin: 0px;
+          }
+
+          &-checkbox {
+            display: inline-block;
+            padding: 0px;
+            margin-right: 4px;
+            position: relative;
+            top: 3px;
+    
+            input[type=checkbox] {
+              display: none;
+            }
+    
+            input[type=checkbox]+label {
+              height: 15px;
+              width: 15px;
+              @include border-radius(3px);
+              border: 2px solid #ccc;
+              cursor: pointer;
+    
+              &:hover {
+                border-color: #777;
+              }
+            }
+    
+            input[type=checkbox]:checked {
+    
+              +label {
+                background: rgb(108, 219, 143) url('/assets/svg/check.svg');
+                background-size: 9px 9px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                border-color: $green;
+                height: 15px;
+                width: 15px;
+    
+                &:hover {
+                  border-color: rgb(49, 190, 94);
+                  background-color: rgb(73, 173, 105);
+                }
+              }
+    
+            }
+          }
+  
+          h3 {
+            margin: 0 0 10px;
+            text-transform: capitalize;
+
+            i {
+              @include font-size(16px);
+              color: $green;
+              margin-right: 10px;
+            }
+  
+            span {
+              float: right;
+            }
+          }
+  
+          h4 {
+            margin: 0 0 5px;
+            color:#666;
+          }
+  
+          ul {
+            @include font-size(14px);
+            font-family: 'AL', sans-serif;
+            margin-bottom: 20px;
+            letter-spacing: .5px;
+            list-style: inherit;
+            margin-left: 15px;
+  
+            li {
+              color: #666;
+              margin-bottom: 2px;
+  
+              &:last-child {
+                margin: 0px;
+              }
+            }
+          }
+        }
+
+        button {
+          @include font-size(14px);
+          font-family: 'AL', sans-serif;
+          letter-spacing: 1px;
+          margin-top: 20px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  credit-card {
+    .btn {
+      text-transform: initial;
+      letter-spacing: .5px;
+    }
+  }
+}

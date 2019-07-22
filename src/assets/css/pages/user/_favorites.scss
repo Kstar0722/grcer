@@ -1,0 +1,25 @@
+.favorites {
+  min-height: 70vh;
+
+  &__header {
+    margin-bottom: 40px;
+
+    &-title {
+      display: inline-block;
+      margin: 0px;
+    }
+
+    &__buttons {
+      float: right;
+
+      &-dropdown {
+        min-width: 100px;
+      }
+
+      >* {
+        display: inline-block;
+        margin-left: 20px;
+      }
+    }
+  }
+}

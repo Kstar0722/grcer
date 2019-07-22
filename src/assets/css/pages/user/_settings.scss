@@ -1,0 +1,55 @@
+.settings {
+  h1 {
+    margin: 0 0 40px;
+  }
+
+  &__links {
+    &__section {
+      @include box-shadow(0 0 2px 0 rgba(57, 73, 76, 0.1));
+      margin-bottom: 25px;
+      border: 1px solid #e7e7ea;
+
+      h2,
+      a {
+        @include font-size(16px);
+        padding: 18px 24px;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+      }
+
+      h2 {
+        margin: 0px;
+        color: #161338;
+        border-bottom: 1px solid #e7e7ea;
+      }
+
+      a {
+        color: #747386;
+        border-left: 3px solid transparent;
+
+        &:hover, &.active {
+          color: $green;
+        }
+
+        &.active {
+          text-decoration: none;
+          border-color: $green;
+        }
+      }
+    }
+  }
+
+  &__content {
+    &-section {
+      @include box-shadow(0 0 2px 0 rgba(57, 73, 76, 0.1));
+      padding: 25px;
+      border: 1px solid #e7e7ea;
+      margin-bottom: 25px;
+
+      h3 {
+        margin: 0 0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+<header class="main" [ngClass]="{'home': isStripe(router.url) }">
+    <div class="container">
+      <div class="nowrap arrange">
+        <div class="arrange_unit middle logo">
+          <a 
+            (click)="GS.event('image', 'Header - Logo', 'click', 0)"
+            [routerLink]="['/']">
+            <img src="./assets/svg/logo.svg" alt="Grceri" />
+          </a>
+        </div>
+  
+        <ul class="account arrange_unit">
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a 
+              class="dropdown" 
+              (mouseover)="isCategoriesDropdownHidden = false"
+              (click)="GS.event('link', 'Header - Categories', 'click', 0)"
+              [routerLink]="['/groceries']">
+              Categories <i class="fa fa-angle-down"></i>
+            </a>
+            <ul *ngIf="isCategoriesDropdownHidden !== true">
+              <li 
+                [routerLinkActive]="['active']" 
+                [routerLinkActiveOptions]="{exact:true}" 
+                *ngFor="let a of lists">
+                <a 
+                  [routerLink]="['/groceries/', url(a)]" 
+                  (click)="isCategoriesDropdownHidden=true; gEvent(a.name)">
+                  {{a.name}} <i *ngIf="a.category" class="fa fa-angle-right"></i>
+                </a>
+                <ul class="sub" *ngIf="a.category">
+                  <li *ngFor="let b of a.category">
+                    <a 
+                      [routerLink]="['/groceries/', url(a), url(b)]" 
+                      (click)="isCategoriesDropdownHidden=true; gEvent(b.name)">
+                      {{b.name}} <i *ngIf="b.sub" class="fa fa-angle-right"></i>
+                    </a>
+                    <!-- <ul class="sub-sub" *ngIf="b.sub">
+                      <li *ngFor="let c of b.sub">
+                        <a [routerLink]="['/groceries/', url(a), url(b), url(c)]">{{c.name}}
+                          <i *ngIf="c.subsub" class="fa fa-angle-right"></i>
+                        </a>
+                        <ul class="sub-sub-sub" *ngIf="c.subsub">
+                          <li *ngFor="let d of c.subsub">
+                            <a [routerLink]="['/groceries/', url(a), url(b), url(c), url(d)]">{{d.name}}</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul> -->
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a class="watchlist">Watchlist <span>0</span></a>
+          </li>
+        </ul>
+        <div class="arrange_unit align-right">
+          <search-input [search]="searchInputText" (inputValue)="onNewInput($event)"></search-input>
+        </div>
+  
+        <div class="arrange_unit middle user-nav">
+          <aside class="arrange middle">
+            <section class="arrange_unit middle loggedIn" *ngIf="login()">
+              <ul class="user">
+                <li class="btn-group profile" dropdown>
+                  <div class="profile-content" *ngIf="profile" dropdownToggle>
+                    <img class="user img" [src]="photoURL(profile.picture)" />
+                    <div class="account-name">
+                      <span class="name"> {{ profile.nickname }} </span>
+                      <span> {{ profile.name }} </span>
+                    </div>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    <i class="fa fa-angle-down"></i>
+                  </div>
+                  <div class="dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+                    <ul>
+                      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a
+                          (click)="GS.event('link', 'Header - Your Account', 'click', 0)"
+                          [routerLink]="['/user']">Your Account</a>
+                      </li>
+                      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                          <a
+                            (click)="GS.event('link', 'Header - Your Watchlists', 'click', 0)"
+                            [routerLink]="['/watchlists']">Your Watchlists</a>
+                        </li>
+                      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a
+                          (click)="GS.event('link', 'Header - Your Lists', 'click', 0)"
+                          [routerLink]="['/user/lists']">Your Lists</a>
+                      </li>
+                      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a
+                          (click)="GS.event('link', 'Header - Your Favorites', 'click', 0)" 
+                          [routerLink]="['/user/favorites']">Your Favorites</a>
+                      </li>
+                      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a 
+                          (click)="GS.event('link', 'Header - Your Settings', 'click', 0)" 
+                          [routerLink]="['/user/settings']">Your Settings</a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-item" (click)="logOut()">Log Out</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <ul class="account arrange_unit" *ngIf="!login()">
+              <!-- <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a>Solutions</a>
+                <ul>
+                  <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/solutions/parents']">For Parents</a>
+                  </li>
+                  <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/solutions/cooks']">For Cooks</a>
+                  </li>
+                  <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/solutions/hosts']">For Hosts</a>
+                  </li>
+                  <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/solutions/students']">For Students</a>
+                  </li>
+                </ul>
+              </li>
+              <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a>Resources</a>
+                <ul>
+                  <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/blog']">Blog</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://grceri.zendesk.com/hc/en-us">Help Center</a>
+                  </li>
+                </ul>
+              </li>
+              <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/pricing']">Pricing</a>
+              </li> -->
+              <li class="login" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a
+                  (click)="GS.event('link', 'Header - Log In', 'click', 0)"  
+                  [routerLink]="['/login']">Log In</a>
+              </li>
+            </ul>
+            <div class="arrange_unit middle cart">
+              <shopping-list></shopping-list>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </header>
+  

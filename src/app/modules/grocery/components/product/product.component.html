@@ -1,0 +1,135 @@
+<div class="breadcrumb-single">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-10">
+        <breadcrumb *ngIf="product"
+          [cat]="product['category']"
+          [subcat]="product['subCategory']"
+          [productTitle]="product['title']"></breadcrumb>
+      </div>
+      <div class="col col-md-2">
+        <product-social
+          *ngIf="Sproduct.images && Sproduct.brand && Sproduct.title && Sproduct.category"
+          [meta]="Sproduct">
+      </product-social>
+      </div>
+    </div>
+  </div>
+</div>
+<div 
+  itemtype="http://schema.org/Product" 
+  itemscope
+  class="product">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-8">
+        <product-carousel
+          *ngIf="currentProductId"
+          [productID]="currentProductId"
+          (getCarouselImagesOutput)="getCarouselComponent($event)">
+        </product-carousel>
+      </div>
+      <div class="col col-md-4">
+        <div class="product__details">
+          <product-details
+            *ngIf="currentProductId"
+            [productID]="currentProductId"
+            [productVendors]="Vproduct"
+            [productImages]="Cproduct"
+            (getProductDetailsOutput)="getProductDetailsComponent($event)">
+          </product-details>
+        </div>
+      </div>
+    </div>
+
+    <div class="product__section">
+      <div class="row">
+        <product-vendors
+          *ngIf="currentProductId"
+          [productID]="currentProductId"
+          (getProductVendorsOutput)="getProductVendorsComponent($event)">
+        </product-vendors>
+      </div>
+    </div>
+
+    <!-- <hr class="product__divider" />
+
+    <div class="product__section">
+      <h4 class="product__section-title">Customers also viewed these products</h4>
+      <slider showC="true" multiple="true" count="7">
+        <ng-container *ngFor="let i of items;">
+          <ng-container *sliderItem>
+            <item [cat]="i.Category" [upc]="i.UPC" [rating]="i.Rating" [ratingC]="i.Rating_count" [name]="i.Title"
+              [images]="i.images" [Hprice]="i.Highest_recorded_price" [Lprice]="i.Lowest_recorded_price">
+            </item>
+          </ng-container>
+        </ng-container>
+      </slider>
+    </div>
+
+    <div class="product__advertisement"></div>
+
+    <div class="product__section">
+      <h4 class="product__section-title">Customers also added these products</h4>
+      <slider showC="true" multiple="true" count="7">
+        <ng-container *ngFor="let i of items;">
+          <ng-container *sliderItem>
+            <item [cat]="i.Category" [upc]="i.UPC" [rating]="i.Rating" [ratingC]="i.Rating_count" [name]="i.Title"
+              [images]="i.images" [Hprice]="i.Highest_recorded_price" [Lprice]="i.Lowest_recorded_price">
+            </item>
+          </ng-container>
+        </ng-container>
+      </slider>
+    </div> -->
+
+    <!-- <div class="product__section">
+      <div class="row">
+        <div class="col col-md-10">
+          <section class="product__section">
+            <product-overview
+              *ngIf="currentProductId"
+              [productID]="currentProductId"
+              (getOverview)="getOverviewComponent($event)">
+            </product-overview>
+          </section>
+          <section class="product__section">
+            <product-nutrition
+              *ngIf="currentProductId"
+              [productID]="currentProductId">
+            </product-nutrition>
+          </section>
+        </div>
+        <div class="col col-md-2">
+          <div class="advertisement-vertical">
+
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <hr class="product__divider" />
+
+    <div class="product__advertisement"></div>
+
+    <hr class="product__divider" /> -->
+
+    <!-- <div class="product__section">
+      <h4 class="product__section-title">Inspired by your browsing history</h4>
+      <slider showC="true" multiple="true" count="7">
+        <ng-container *ngFor="let i of items;">
+          <ng-container *sliderItem>
+            <item [cat]="i.Category" [upc]="i.UPC" [rating]="i.Rating" [ratingC]="i.Rating_count" [name]="i.Title"
+              [images]="i.images" [Hprice]="i.Highest_recorded_price" [Lprice]="i.Lowest_recorded_price">
+            </item>
+          </ng-container>
+        </ng-container>
+      </slider>
+    </div> -->
+  </div>
+</div>
+
+<product-feedback *ngIf="feedbackO" (open)="feedback($event, 'open')" (success)="feedback($event, 'success')"
+  [id]="product"></product-feedback>
+<product-added *ngIf="addedO" (open)="added($event)" [added]="product"></product-added>
+
+<!-- <product-compare></product-compare> -->

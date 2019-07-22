@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+'abstracts/keyframes',
+'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+
+// 2. Vendors
+@import
+'vendor/reset',
+'vendor/normalize',
+'vendor/plugins';
+
+// 3. Base stuff
+@import
+'base/base',
+'base/fonts',
+'base/typography',
+'base/helpers';
+
+// 4. Layout-related sections
+@import
+'layout/skeleton',
+'layout/header',
+'layout/category/category',
+'layout/category/sidebar',
+'layout/category/sort',
+'layout/category/pagination',
+'layout/cta',
+'layout/footer';
+
+// 5. Components
+@import
+'components/button',
+'components/dropdown',
+'components/search',
+'components/notifications',
+'components/slider',
+'components/advertisements',
+'components/breadcrumb';
+
+// 6. Page-specific styles
+@import
+'pages/home',
+'pages/groceries',
+'pages/auth',
+'pages/pricing',
+'pages/user/dashboard',
+'pages/user/lists',
+'pages/user/list',
+'pages/user/favorites',
+'pages/user/settings',
+'pages/cart',
+'pages/product/product',
+'pages/product/feedback',
+'pages/product/added',
+'pages/product/compare',
+'pages/product/carousel',
+'pages/product/reviews',
+'pages/blog',
+'pages/solutions',
+'pages/watchlist',
+'pages/legal';

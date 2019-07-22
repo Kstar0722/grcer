@@ -1,0 +1,108 @@
+user {
+  margin: 50px 0;
+  display: block;
+
+  section {
+
+    header {
+
+      h1 {
+        display: block;
+        margin: 48px 0;
+      }
+    }
+  }
+}
+
+.dashboard {
+  &__content {
+    &__box {
+      @include box-shadow(0 0 2px 0 rgba(57, 73, 76, 0.1));
+      border: 1px solid #e7e7ea;
+      padding: 20px 25px;
+      min-height: 350px;
+
+      &__header {
+        margin: 0 0 20px 0;
+        display: flow-root;
+
+        &-title {
+          @include font-size(21px);
+          font-family: 'AM', sans-serif;
+          margin: 0;
+        }
+    
+        &-subtitle {
+          @include font-size(15px);
+          font-family: 'AL', sans-serif;
+          letter-spacing: .3px;
+          color: #888;
+          font-weight: 400;
+        }
+
+        &-left {
+          float: left;
+        }
+
+        &-right {
+          float: right;
+        }
+
+        &-dropdown {
+          position: relative;
+        }
+      }
+    }
+
+    .row {
+
+      &:first-of-type {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__select {
+      margin-bottom: 40px;
+    }
+
+    &__total {
+      &-item {
+        @include font-size(15px);
+        margin-bottom: 10px;
+      }
+    }
+
+    &__types {
+      margin-bottom: 25px;
+
+      &-type {
+        @include font-size(13px);
+        font-weight: 500;
+        display: inline-block;
+        padding: 15px 0;
+        color: #777;
+        border-bottom: 1px solid transparent;
+        position: relative;
+        top: 1px;
+
+        &:first-of-type {
+          margin-right: 30px;
+        }
+
+        &.active {
+          color: #333;
+          border-bottom-color: #333;
+        }
+      }
+    }
+
+    &__calories,
+    &__nutrition {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

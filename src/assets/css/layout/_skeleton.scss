@@ -1,0 +1,76 @@
+.skeleton {
+  &-bar,
+  &-bar-30,
+  &-bar-40,
+  &-bar-thumbnail,
+  &-bar-carousel,
+  &-square {
+    display: block;
+    background: #fafafa;
+  }
+
+  &-bar {
+    height: 20px;
+
+    &-thumbnail {
+      width: 50px;
+      display: inline-block;
+      margin-left: 15px;
+      height: 30px;
+    }
+
+    &-carousel {
+      margin-top: 60px;
+      height: 500px;
+      width: 500px;
+    }
+
+    &-30 {
+      height: 30px;
+    }
+
+    &-40 {
+      height: 40px;
+    }
+  }
+
+  &-square {
+    margin: 24px;
+    height: 200px;
+  }
+
+  &-box {
+    float: left;
+    margin-bottom: 20px;
+    width: 20%;
+    padding: 16px 4px;
+  }
+
+  &-margin-bottom {
+    margin-bottom: 10px;
+
+    &-20 {
+      margin-bottom: 20px;
+    }
+
+    &-30 {
+      margin-bottom: 30px;
+    }
+
+    &-40 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-margin-top {
+    margin-top: 10px;
+
+    &-20 {
+      margin-top: 20px;
+    }
+
+    &-40 {
+      margin-top: 40px;
+    }
+  }
+}

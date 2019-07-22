@@ -1,0 +1,580 @@
+[
+  {
+    "name": "Grocery & Gourmet Food",
+    "id": 976759,
+    "categories": [
+      {
+        "name": "Baking",
+        "class": "cooking",
+        "id": 976780,
+        "category": [
+          {
+            "name": "Baking Chips & Bars",
+            "id": 1092367
+          },
+          {
+            "name": "Baking Mixes",
+            "id": 1001368
+          },
+          {
+            "name": "Baking Nuts, Coconut & Fruit",
+            "id": 1092368
+          },
+          {
+            "name": "Baking Powder & Soda",
+            "id": 1044094
+          },
+          {
+            "name": "Canned & Powdered Milk",
+            "id": 1044149
+          },
+          {
+            "name": "Coatings & Batters",
+            "id": 1044090
+          },
+          {
+            "name": "Extracts & Colorings",
+            "id": 1092369
+          },
+          {
+            "name": "Flours & Meals",
+            "id": 1044119
+          },
+          {
+            "name": "Frosting, Toppings & Decorations",
+            "id": 1044127
+          },
+          {
+            "name": "Oil & Shortening",
+            "id": 1044152
+          },
+          {
+            "name": "Pie Fillings",
+            "id": 1044161
+          },
+          {
+            "name": "Sugar & Sweeteners",
+            "id": 1044129
+          },
+          {
+            "name": "Syrups",
+            "id": 1092370
+          },
+          {
+            "name": "Yeast",
+            "id": 1044105
+          }
+        ]
+      },
+      {
+        "name": "Beverages",
+        "class": "beverage",
+        "id": 976782,
+        "category": [
+          {
+            "name": "Energy Drinks",
+            "id": 9357528
+          },
+          {
+            "name": "Hot Cocoa",
+            "id": 1044077
+          },
+          {
+            "name": "Juice",
+            "id": 1001321
+          },
+          {
+            "name": "Kids Drinks",
+            "id": 2838858
+          },
+          {
+            "name": "Kool-Aid",
+            "id": 4818838
+          },
+          {
+            "name": "Milk Substitutes",
+            "id": 8649877
+          },
+          {
+            "name": "Powdered Drink Mix",
+            "id": 1001683
+          },
+          {
+            "name": "Soda Pop",
+            "id": 1001680
+          },
+          {
+            "name": "Sports Drinks",
+            "id": 1001682
+          },
+          {
+            "name": "Tea",
+            "id": 1001320
+          },
+          {
+            "name": "Water",
+            "id": 1001659
+          },
+          {
+            "name": "Water Flavoring",
+            "id": 1228026
+          }
+        ]
+      },
+      {
+        "name": "Breakfast & Cereal",
+        "id": 976783,
+        "class": "breakfast",
+        "category": [
+          {
+            "name": "Cereal & Breakfast Bars",
+            "id": 1001332
+          },
+          {
+            "name": "Cold Cereal",
+            "id": 1231208
+          },
+          {
+            "name": "Granola & Muesli",
+            "id": 1231209
+          },
+          {
+            "name": "Nut Butters & Spreads",
+            "id": 1018820
+          },
+          {
+            "name": "Oatmeal & Grits",
+            "id": 1231210
+          },
+          {
+            "name": "Pancake & Waffle Mix",
+            "id": 1231206
+          },
+          {
+            "name": "Poptarts & Toaster Pastries",
+            "id": 1001336
+          }
+        ]
+      },
+      {
+        "name": "Chocolate, Candy & Gum",
+        "class": "chocolate",
+        "id": 1096070,
+        "category": [
+          {
+            "name": "Chocolate",
+            "id": 1224976
+          },
+          {
+            "name": "Gum",
+            "id": 1224977
+          },
+          {
+            "name": "Gummy Candy & Jelly Beans",
+            "id": 1224975
+          },
+          {
+            "name": "Hard Candy & Lollipops",
+            "id": 1224979
+          },
+          {
+            "name": "Mints",
+            "id": 1224978
+          },
+          {
+            "name": "Variety & Bulk Packs",
+            "id": 1224980
+          }
+        ]
+      },
+      {
+        "name": "Coffee",
+        "class": "coffee",
+        "id": 1086446,
+        "category": [
+          {
+            "name": "Bottled Coffee",
+            "id": 1229654
+          },
+          {
+            "name": "Coffee Creamers",
+            "id": 1100007
+          },
+          {
+            "name": "Coffee Filters",
+            "id": 1229655
+          },
+          {
+            "name": "Coffee Supplies",
+            "id": 1856582
+          },
+          {
+            "name": "Ground Coffee",
+            "id": 1229651
+          },
+          {
+            "name": "Instant Coffee",
+            "id": 1229650
+          },
+          {
+            "name": "Single-Serve Cups & Pods",
+            "id": 1229653
+          },
+          {
+            "name": "Whole Bean Coffee",
+            "id": 1229652
+          }
+        ]
+      },
+      {
+        "name": "Condiments, Sauces & Spices",
+        "class": "spice",
+        "id": 976786,
+        "category": [
+          {
+            "name": "Chutneys & Relishes",
+            "id": 1044185
+          },
+          {
+            "name": "Condiments",
+            "id": 1001363
+          },
+          {
+            "name": "Honey",
+            "id": 1007699
+          },
+          {
+            "name": "Jam, Jelly & Preserves",
+            "id": 1007659
+          },
+          {
+            "name": "Oil & Shortening",
+            "id": 1044152
+          },
+          {
+            "name": "Olives",
+            "id": 1044186
+          },
+          {
+            "name": "Pickles",
+            "id": 1044187
+          },
+          {
+            "name": "Salad Dressings & Toppings",
+            "id": 1001365
+          },
+          {
+            "name": "Salt, Spices & Seasoning",
+            "id": 1007682
+          },
+          {
+            "name": "Sauces",
+            "id": 1076366
+          },
+          {
+            "name": "Syrups & Sweeteners",
+            "id": 1008040
+          },
+          {
+            "name": "Vinegar",
+            "id": 1001366
+          }
+        ]
+      },
+      {
+        "name": "Fresh Food",
+        "class": "meat",
+        "id": 1071964,
+        "category": [
+          {
+            "name": "Bakery & Bread",
+            "id": 976779
+          },
+          {
+            "name": "Dairy, Eggs & Cheese",
+            "id": 976788
+          },
+          {
+            "name": "Deli",
+            "id": 976789
+          },
+          {
+            "name": "Meat, Seafood & Poultry",
+            "id": 976796
+          },
+          {
+            "name": "Produce",
+            "id": 976793
+          }
+        ]
+      },
+      {
+        "name": "Frozen Foods",
+        "class": "seafood",
+        "id": 976791,
+        "category": [
+          {
+            "name": "Frozen Appetizers",
+            "id": 1001411
+          },
+          {
+            "name": "Frozen Breakfast Food",
+            "id": 1001417
+          },
+          {
+            "name": "Frozen Desserts & Bakery",
+            "id": 1001420
+          },
+          {
+            "name": "Frozen Dinners & Meals",
+            "id": 1001412
+          },
+          {
+            "name": "Frozen Fruit",
+            "id": 1001413
+          },
+          {
+            "name": "Frozen Meat",
+            "id": 1230001
+          },
+          {
+            "name": "Frozen Rolls & Wraps",
+            "id": 1044164
+          },
+          {
+            "name": "Frozen Seafood",
+            "id": 1001782
+          },
+          {
+            "name": "Frozen Vegetables",
+            "id": 1001424
+          },
+          {
+            "name": "Ice",
+            "id": 1001681
+          },
+          {
+            "name": "Ice Cream & Novelties",
+            "id": 1001423
+          },
+          {
+            "name": "Ice Cream Wafers & Cones",
+            "id": 3474018
+          },
+          {
+            "name": "Pizza",
+            "id": 1001416
+          }
+        ]
+      },
+      {
+        "name": "Gift Baskets",
+        "class": "jam",
+        "id": 1089004,
+        "category": [
+          {
+            "name": "Chocolate & Candy Gifts",
+            "id": 5339481
+          },
+          {
+            "name": "Coffee & Tea Gifts",
+            "id": 3993317
+          },
+          {
+            "name": "Cookie Gifts",
+            "id": 3675036
+          },
+          {
+            "name": "Dips & Sauce Boxes",
+            "id": 1869246
+          },
+          {
+            "name": "Fruit Baskets",
+            "id": 1337713
+          },
+          {
+            "name": "Holiday Gift Baskets",
+            "id": 5993997
+          },
+          {
+            "name": "Meat & Cheese Gifts",
+            "id": 9074070
+          },
+          {
+            "name": "Mixed Nuts Gifts",
+            "id": 6647975
+          },
+          {
+            "name": "Mother's Day Gift Baskets",
+            "id": 8928454
+          },
+          {
+            "name": "Popcorn Tins",
+            "id": 5057839
+          },
+          {
+            "name": "Snack Boxes & Gifts",
+            "id": 9406982
+          },
+          {
+            "name": "Valentine's Day Gift Baskets",
+            "id": 6887763
+          }
+        ]
+      },
+      {
+        "name": "Gluten-Free Foods",
+        "class": "grain",
+        "id": 1228023
+      },
+      {
+        "name": "International Foods",
+        "class": "prepared-food",
+        "id": 1228025,
+        "category": [
+          {
+            "name": "European Cuisine",
+            "id": 7666074
+          },
+          {
+            "name": "Hispanic Foods",
+            "id": 1228103
+          },
+          {
+            "name": "Other International Foods",
+            "id": 1228105
+          }
+        ]
+      },
+      {
+        "name": "Kosher Foods",
+        "class": "bread",
+        "id": 8925069
+      },
+      {
+        "name": "Meal Solutions, Grains & Pasta",
+        "class": "pasta",
+        "id": 976794,
+        "category": [
+          {
+            "name": "Boxed Meals",
+            "id": 1001477
+          },
+          {
+            "name": "Canned Goods",
+            "id": 976785
+          },
+          {
+            "name": "Condiments, Sauces & Spices",
+            "id": 976786
+          },
+          {
+            "name": "Dried Beans",
+            "id": 1001478
+          },
+          {
+            "name": "Emergency Food",
+            "id": 1094144
+          },
+          {
+            "name": "Grains & Rice",
+            "id": 1001474
+          },
+          {
+            "name": "Pasta & Noodles",
+            "id": 1007519
+          },
+          {
+            "name": "Pasta Sauce",
+            "id": 2775278
+          },
+          {
+            "name": "Sauces",
+            "id": 1001374
+          }
+        ]
+      },
+      {
+        "name": "Organic Foods",
+        "class": "vegetable",
+        "id": 1228024
+      },
+      {
+        "name": "Snacks, Cookies & Chips",
+        "class": "snack",
+        "id": 976787,
+        "category": [
+          {
+            "name": "Chips & Crisps",
+            "id": 1001390
+          },
+          {
+            "name": "Cookies",
+            "id": 1001391
+          },
+          {
+            "name": "Crackers",
+            "id": 1001392
+          },
+          {
+            "name": "Dips & Spreads",
+            "id": 1001393
+          },
+          {
+            "name": "Dried Fruit & Dried Vegetables",
+            "id": 1044135
+          },
+          {
+            "name": "Fruit Cups & Fruit Sauces",
+            "id": 1044133
+          },
+          {
+            "name": "Fruit Snacks",
+            "id": 1001395
+          },
+          {
+            "name": "Granola Bars & Snack Bars",
+            "id": 1044154
+          },
+          {
+            "name": "Jerky",
+            "id": 1001405
+          },
+          {
+            "name": "Nuts, Trail Mix & Seeds",
+            "id": 1001406
+          },
+          {
+            "name": "Popcorn",
+            "id": 1001407
+          },
+          {
+            "name": "Pretzels",
+            "id": 1044156
+          },
+          {
+            "name": "Pudding & Gelatin",
+            "id": 1001471
+          },
+          {
+            "name": "Rice Cakes",
+            "id": 1001397
+          },
+          {
+            "name": "Snack Cakes",
+            "id": 1001398
+          },
+          {
+            "name": "Snack Mixes",
+            "id": 2452884
+          }
+        ]
+      },
+      {
+        "name": "Soups",
+        "class": "noodle",
+        "id": 1001359
+      }
+    ]
+  }
+]

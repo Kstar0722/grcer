@@ -1,0 +1,111 @@
+// USER REPORT
+#__bpnFeedbackPopup {
+  >div {
+    display: none;
+  }
+}
+
+// KENDO
+.modal-content {
+  @include box-shadow(0 1px 5px rgba(0,0,0,.1));
+  @include border-radius(3px);
+  border: none;
+}
+
+// RATING
+bar-rating {
+  display: inline-block;
+  margin-right: 4px;
+
+  .br {
+    margin: 0px !important;
+
+    .br-unit {
+      @include font-size(13px);
+      width: 13px;
+      height: 13px;
+      margin-right: 2px;
+    }
+
+    .br-selected,
+    .br-fraction {
+      &:after {
+        color: #ffce00 !important;
+      }
+    }
+  }
+}
+
+// SLIDER
+.slider {
+  slider-chart {
+    display: block;
+  }
+
+  .ng5-slider {
+    margin-top: -3px;
+
+    .ng5-slider-bar {
+      background: #ccecd6;
+      height: 3px;
+    }
+
+    .ng5-slider-selection {
+      background: $green;
+    }
+
+    .ng5-slider-pointer {
+      width: 12px;
+      height: 12px;
+      top: auto;
+      bottom: -3px;
+      background-color: $white;
+      border: 3px solid $green;
+    }
+
+    .ng5-slider-pointer:after {
+      display: none;
+    }
+
+    .ng5-slider-bubble {
+      @include font-size(14px);
+      bottom: 14px;
+    }
+
+    .ng5-slider-limit {
+      display: none;
+    }
+
+    .ng5-slider-tick {
+      width: 1px;
+      height: 10px;
+      margin-left: 4px;
+      border-radius: 0;
+      background: #ccecd6;
+      top: -1px;
+
+      &.ng5-slider-selected {
+        background: $green;
+      }
+    }
+  }
+}
+
+// ADSENSE
+.horizontal-advertisement,
+.vertical-advertisement,
+.box-advertisement {
+  text-align: center;
+}
+
+.horizontal-advertisement {
+  margin-top: 20px;
+}
+
+.vertical-advertisement {
+  margin: 20px 20px 0 0;
+}
+
+.box-advertisement {
+  margin-top: 20px;
+}

@@ -1,0 +1,185 @@
+<div class="breadcrumb-single">
+  <div class="container">
+    <breadcrumb></breadcrumb>
+  </div>
+</div>
+
+<div class="container">
+  <ng-container *ngIf="cartItems === null || cartItems === []; else length">
+    <div class="empty">
+      <div class="cart">
+        <img src="../../../assets/svg/cart.svg" />
+        <h2>Empty Grocery List</h2>
+        <p>Looks like you haven't added any items to your grocery list.</p>
+        <a class="btn btn-primary" [routerLink]="['/groceries']">Shop Groceries</a>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #length>
+    <div class="cart">
+      <div class="listing-header">
+        <div class="listing-header__body">
+          <div class="row">
+            <div class="col col-md-6">
+              <div class="listing-header__body-titles">
+                <h1>{{totalQuantity()}} 
+                  <ng-container *ngIf="totalQuantity() === 1; else items">
+                    item on your list.
+                  </ng-container>
+                  <ng-template #items>
+                    items on your list.
+                  </ng-template>
+                 </h1>
+                <h3>Create a new shopping list or add to an existing one.</h3>
+              </div>
+            </div>
+            <div class="col col-md-6">
+              <div class="listing-header__body-btns">
+                <button *ngIf="AS.isAuthenticated()" class="btn" [routerLink]="['/user/lists/add']">Add</button>
+                <button class="btn btn-primary" [routerLink]="['/user/lists/create']">Create</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listing-header__items-heading" aria-hidden="true">
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="listing-header__first-item">Item</div>
+            </div>
+            <div class="col-xs-1 listing-header__quantity-column">QTY</div>
+            <div class="col-xs-3 align-right">
+              <div class="listing-header__last-item">Price</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-listing__items">
+        <div class="cart-item" *ngFor="let item of cartItems">
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="cart-item__details">
+                <span class="sr-only">Item</span>
+                <div class="cart-item__image-wrapper">
+                  <img class="cart-item__image-wrapper__image" [src]="item.images[0].thumbnail" alt="{{item.title}}">
+                </div>
+                <a [routerLink]="['/grocery/', product(item.title), item.productId]" class="cart-item__title">{{item.title}}</a>
+                <div class="cart-item-vendor">{{ item.vendor }}</div>
+              </div>
+            </div>
+            <div class="cart-item__quantity-block col-xs-1">
+              <span class="sr-only">QTY</span>
+              <a class="cart-item__quantity-block__remove" title="Remove" (click)="removeItem(item)">Remove</a>
+              <a class="cart-item__quantity-block__save" title="Save for Later" (click)="saveItem(item)">Save for Later</a>
+            </div>
+            <div class="cart-item__price-block col-xs-3">
+              <div class="align-right">
+                <span class="sr-only">Price</span>
+                <div class="cart-item__price-block-price">$ {{getAmount(item)}}</div>
+                <div *ngIf="item.quantity > 1" class="cart-item__price-block-each">($ {{item.price}} each)</div>
+                <div *ngIf="item.savings > 0 && (getHighestSavings(item.vendorsPrice) > getAmount(item))" class="cart-item__price-block__savings">
+                  <div class="cart-item__price-block__savings-discount">Best Price</div>
+                  <div class="cart-item__price-block__savings-saved">
+                    <input id="getSavingsItem" type="hidden" value="item.savings" />
+                    Save ${{item.savings}}
+                  </div>
+                  <div class="cart-item__price-block__savings-highest"> Highest ${{getHighestSavings(item.vendorsPrice)}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-9">
+          <div class="viewed">
+            <div class="viewed__tabs">
+              <a [class.active]="suggestedClick" (click)="suggested('viewed')">Recently Viewed</a>
+              <a [class.active]="!suggestedClick" (click)="suggested('saved')">Saved</a>
+            </div>
+            <div class="viewed__results">
+              <ng-container *ngFor="let item of items">
+                <div *ngIf="suggestedClick && !AS.isAuthenticated() || !suggestedClick && AS.isAuthenticated() || suggestedClick" class="viewed__results__result">
+                  <div class="row">
+                    <div class="col-xs-10">
+                      <div class="viewed__results__result__details">
+                        <span class="sr-only">Item</span>
+                        <div class="viewed__results__result__details__image-wrapper">
+                          <img class="viewed__results__result__details__image-wrapper-image" [src]="item.images[0]" alt="{{item.name}}" />
+                        </div>
+                        <a class="viewed__results__result__details-title" [routerLink]="['/grocery/', product(item.category), product(item.name)]">{{item.name}}</a>
+                      </div>
+                    </div>
+                    <div class="col-xs-2">
+                      <div class="viewed__results__result__price-block align-right">
+                        <span class="sr-only">Price</span>
+                        <div class="viewed__results__result__price-block-price">$ {{item.price}}</div>
+                        <a (click)="addCart(item)" class="viewed__results__result__price-block-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="viewed__results__result-none" *ngIf="item.length === 0 || !item">
+                  No items to display
+                </div>
+              </ng-container>
+              <div *ngIf="!suggestedClick && !AS.isAuthenticated()" class="viewed__results__result-login">
+                <a (click)="(login(router.url))">Please Login to View</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-3">
+          <div class="listing-footer">
+            <div class="listing-footer__order-summary">
+              <div class="listing-footer__order-summary__pricing">
+                <div
+                  *ngIf="getTotalSavings() > 0" 
+                  class="listing-footer__order-summary__pricing__savings clearfix">
+                  <div class="listing-footer__order-summary__pricing__savings-description">Today’s Savings</div>
+                  <div class="listing-footer__order-summary__pricing__savings-value">$ {{getTotalSavings()}}</div>
+                </div>
+                <div class="listing-footer__order-summary__pricing__total clearfix">
+                  <div class="listing-footer__order-summary__pricing__total-description">Product Total</div>
+                  <div class="listing-footer__order-summary__pricing__total-value">$ {{getTotalAmount()}}</div>
+                </div>
+              </div>
+              <div class="listing-footer__button">
+                <button class="btn btn-primary" [routerLink]="['/user/lists/create']">Create</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-advertisement">
+            <ng-adsense
+              [adClient]="'ca-pub-3783664105032363'"
+              [adFormat]="'auto'"
+              [adSlot]="7797307814">
+            </ng-adsense>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="recommendations">
+        <h2>A few recommendations.</h2>
+        <slider showC="true" multiple="true" count="7">
+          <ng-container *ngFor="let i of recs;">
+            <ng-container *sliderItem>
+              <item
+
+                [cat]="i.Category"
+                [upc]="i.UPC"
+                [rating]="i.Rating"
+                [ratingC]="i.Rating_count"
+                [name]="i.Title"
+                [images]="i.images"
+                [Hprice]="i.Highest_recorded_price"
+                [Lprice]="i.Lowest_recorded_price">
+              </item>
+            </ng-container>
+          </ng-container>
+        </slider>
+      </div> -->
+    </div>
+  </ng-template>
